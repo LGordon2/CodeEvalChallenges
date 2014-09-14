@@ -9,8 +9,9 @@ if len(sys.argv) < 2:
 with open(sys.argv[1]) as f:
     for line in f:
         curr_num = None
+        nums = []
         for num in line.rstrip().split(','):
             if curr_num != num:
                 curr_num = num
-                print num + ",",
-        print
+                nums.append(num)
+        print ','.join(nums)
